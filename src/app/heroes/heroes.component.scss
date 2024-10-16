@@ -2,8 +2,11 @@
     cursor: pointer;
 }
 
+table {
+    width: 100%;
+}
 
-.heroes li.selected {
-    background-color: black;
-    color: white;
+.mat-row:hover {
+    cursor: pointer;
+    background: whitesmoke;
 }

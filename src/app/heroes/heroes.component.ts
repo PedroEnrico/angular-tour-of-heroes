@@ -10,8 +10,9 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
-  selectedHero?: Hero;
-  constructor(private heroService: HeroService, private messageService: MessageService) {} // Injeta o service;
+  displayedColumns: string[] = ['id', 'name']
+
+  constructor(private heroService: HeroService) {} // Injeta o service;
 
   ngOnInit(): void { // Chama o metodo getHeroes;
     this.getHeroes();
@@ -36,12 +37,5 @@ export class HeroesComponent implements OnInit {
     //     console.log('Agora foi normalmente concluido');
     //  }
     ); 
-  }
-  
-  onSelect(hero: Hero): void {
-    
-    this.selectedHero = hero; 
-    this.messageService.add(`HeroesComponent: Selected Hero Id = ${hero.id}`);
-
   }
 }
