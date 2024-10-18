@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/components/heroes/heroes.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './heroes/components/hero-detail/hero-detail.component';
+import { PageNotFoundComponent } from './core/components/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+  // Quando rodar o heroes, irá carregar o heroes.module e dentro deste hero.module, tem o heroes-routing.module
+  // Dentro do heroes-routing.module irá carregar o '' que é o HeroesComponent. 
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
+  },
+  {
+    path: 'heroes',
+    loadChildren: () => import('./heroes/heroes.module').then((h) => h.HeroesModule)
+  },
+  {
+    path:'**', component: PageNotFoundComponent
+  }
 ]
 
 @NgModule({

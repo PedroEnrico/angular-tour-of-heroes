@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent}
+  { path: '', component: DashboardComponent} // Posso carregar vazio aqui pois já carrego o dashboard no app-routing
 ]
 
 @NgModule({
