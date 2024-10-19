@@ -6,11 +6,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 const COMPONENTS = [
   MessagesComponent,
   ToolbarComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  LoadingComponent
 ]
 
 const MODULES = [FlexLayoutModule, MaterialModule, RouterModule]
@@ -25,6 +29,13 @@ const MODULES = [FlexLayoutModule, MaterialModule, RouterModule]
     COMPONENTS,
     MODULES,
     MaterialModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, // Tipo do Provider
+      useClass: LoadingInterceptor, // Classe Usada 
+      multi: true
+    }
   ]
 })
 export class CoreModule {
