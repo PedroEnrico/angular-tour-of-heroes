@@ -80,7 +80,8 @@
               "browserTarget": "angular-hero:build:production"
             },
             "development": {
-              "browserTarget": "angular-hero:build:development"
+              "browserTarget": "angular-hero:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
