@@ -19,7 +19,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void { // Chama o metodo getHeroes do SERVICE. Retornando uma lista de hero;
-   this.heroService.getHeroes().subscribe( // Quando deifinimos um retorno como Observable utilizamos o .subscribe para ser notificado quando ocorrer uma mudança no getHeroes;
+   this.heroService.getAll().subscribe( // Quando deifinimos um retorno como Observable utilizamos o .subscribe para ser notificado quando ocorrer uma mudança no getHeroes;
     //Next: método é chamado para cada valor emitido pelo Observable.
    (heroes) => (this.heroes = heroes),
    // Error: método é chamado se ocorrer um erro durante a emissão.
