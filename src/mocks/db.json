@@ -2,7 +2,7 @@
   "heroes": [
     {
       "id": 1,
-      "name": "TESTE"
+      "name": "input clear button"
     },
     {
       "id": 2,
@@ -10,11 +10,11 @@
     },
     {
       "id": 3,
-      "name": "Super Homem"
+      "name": "Super ZÉ"
     },
     {
       "id": 4,
-      "name": "Mulher maravilha"
+      "name": "Mulher marai"
     },
     {
       "id": 5,
@@ -47,6 +47,18 @@
     {
       "name": "The Flash",
       "id": 12
+    },
+    {
+      "id": 13,
+      "name": "Lixo"
+    },
+    {
+      "name": "Teste snackBar",
+      "id": 14
+    },
+    {
+      "name": "aba",
+      "id": 15
     }
   ]
 }
