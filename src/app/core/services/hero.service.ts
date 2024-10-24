@@ -30,14 +30,14 @@ export class HeroService {
   // GET /heroes/id
   getOne(id: number):Observable<Hero> {
 
-    return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
+    return this.http.get<Hero>(this.getUrl(id)).pipe(
       tap((hero) => this.log(`fetched ${this.descAttributes(hero)}`))
     );
   }
 
   // PUT /heroes/id
   update(hero: Hero): Observable<Hero> {
-    return this.http.put<Hero>(`${this.heroesUrl}/${hero.id}`, hero).pipe(
+    return this.http.put<Hero>(this.getUrl(hero.id), hero).pipe(
       tap((hero) => this.log(`Updated ${this.descAttributes(hero)}`))
     );
   }
@@ -49,6 +49,13 @@ export class HeroService {
     );
   }
 
+  // DELETE /heroes/id
+  delete(hero: Hero): Observable<any> {
+    return this.http.delete<any>(this.getUrl(hero.id)).pipe(
+      tap((hero) => this.log(`Deleted ${this.descAttributes(hero)}`))
+    );
+  }
+
   private log(message: string): void {
     this.messageService.add(`HeroService: ${message}`);
   }
@@ -57,4 +64,7 @@ export class HeroService {
     return ` hero id=${hero.id} and name=${hero.name}`;
   }
 
+  private getUrl(id: number) {
+    return `${this.heroesUrl}/${id}`;
+  }
 }

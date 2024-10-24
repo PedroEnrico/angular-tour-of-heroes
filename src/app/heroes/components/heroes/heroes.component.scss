@@ -16,3 +16,13 @@ table {
     right: 20px;
     top: 80px;
 }
+
+.mat-column-id {
+    max-width: 0px;
+}
+
+.mat-column-actions {
+    border-left: 1px solid currentColor;
+    max-width: 60px;
+    padding-left: 0px;
+}

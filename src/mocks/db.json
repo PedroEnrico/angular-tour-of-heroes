@@ -1,14 +1,6 @@
 {
   "heroes": [
     {
-      "id": 1,
-      "name": "input clear button"
-    },
-    {
-      "id": 2,
-      "name": "XKA"
-    },
-    {
       "id": 3,
       "name": "Super ZÉ"
     },
@@ -33,10 +25,6 @@
       "name": "Mask"
     },
     {
-      "id": 9,
-      "name": "Mers"
-    },
-    {
       "id": 10,
       "name": "Souls"
     },
@@ -53,12 +41,12 @@
       "name": "Lixo"
     },
     {
-      "name": "Teste snackBar",
-      "id": 14
-    },
-    {
       "name": "aba",
       "id": 15
+    },
+    {
+      "name": "TESTE HEROI",
+      "id": 16
     }
   ]
 }
