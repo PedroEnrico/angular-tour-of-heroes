@@ -42,6 +42,17 @@ export class HeroService {
     );
   }
 
+  // GET /heroes?name=term     Na url o ? é para parametros, ex: ?name=term&age=19
+  search(term: string): Observable<Hero[]> {
+    if (!term.trim()) return of([]);
+
+    return this.http.get<Hero[]>(`${this.heroesUrl}?name=${term}`).pipe(
+      tap((heroes) => 
+        heroes.length ? this.log(`Found ${heroes.length} hero(es) matching "${term}"`) : this.log(`no heroes matching "${term}"`)
+      )
+    );
+  }
+
   // POST /heroes
   create(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero).pipe(

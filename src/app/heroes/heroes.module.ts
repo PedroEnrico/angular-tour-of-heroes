@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -16,7 +17,8 @@ import { HeroesRoutingModule } from './heroes-routing.module';
     MaterialModule, 
     FlexLayoutModule,
     HeroesRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class HeroesModule { }
