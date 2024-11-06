@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { AuthGuard } from '../auth/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HeroesComponent },
-  { path: ':id', component: HeroDetailComponent}
+  // Para acessar as urls de heroes, o canActivate apontado para AuthGuard deve retornar true.
+  { path: '', component: HeroesComponent, canActivate: [AuthGuard] },
+  { path: ':id', component: HeroDetailComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({

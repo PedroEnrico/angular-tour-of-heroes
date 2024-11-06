@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem } from './core/models/menu-item.model';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +22,14 @@ export class AppComponent {
       toolTipText: 'Heroes'
     }
   ]
+  isLoggedIn$: Observable<boolean>;
+
+  constructor(private authService: AuthService) {
+    // o App está observando qualquer alteração que ocorrer no isLoggedIn do authService
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
+  }
+
+  onLogout(): void {
+    this.authService.logout();
+  }
 }
