@@ -10,7 +10,8 @@
         *ngFor="let menuItem of menuItems"
         [routerLink]="[menuItem.routerLink]"
         >
-            <mat-icon>{{menuItem.icon}}</mat-icon>
+            <fa-icon [icon]="menuItem.fasIcon" *ngIf="!!menuItem.fasIcon"></fa-icon>
+            <mat-icon *ngIf="!!menuItem.MatIcon">{{menuItem.MatIcon}}</mat-icon>
         </button>
     </ng-container>
     
@@ -25,7 +26,8 @@
 
     <div *ngIf="isLoggedIn">
         <button mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>account_circle</mat-icon>
+            <!-- <mat-icon>account_circle</mat-icon> -->
+            <fa-icon [icon]="'bars'"></fa-icon>
         </button>
     </div>
     

@@ -12,12 +12,12 @@ export class AppComponent {
   title = 'angular-hero';
   menuItems: MenuItem[] = [
     {
-      icon: 'dashboard',
+      MatIcon: 'dashboard',
       routerLink: '/dashboard',
       toolTipText: 'Dashboard'
     },
     {
-      icon: 'sports_martial_arts',
+      fasIcon: 'mask',
       routerLink: '/heroes',
       toolTipText: 'Heroes'
     }
